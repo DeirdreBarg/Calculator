@@ -2,15 +2,12 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(void)
-{
-    // Defining variables
-    string operation;   
-    string validMessage = "This is a Valid operation\n"; 
-    bool doesNeedPrompt = true ;
+// Gets valid opperation from user
+string getValidOperation() {
 
-    // Intro message
-    printf("Welcome to my first Calculator. You can use + , - , x , / , sq = square root , ex = exponent\n ");
+    string operation;
+    bool doesNeedPrompt = true ;    
+    string validMessage = "This is a Valid operation\n"; 
 
     // Getting a valid opperation
     while (doesNeedPrompt) {
@@ -44,10 +41,10 @@ int main(void)
         } 
     }
 
-    // Getting x and y values
-    int x = get_int("x: ");
-    int y = get_int("y: ");
+    return operation;
+}
 
+void performOperation(string operation, int x, int y) {    
     // Doing the opperation
     if (strcmp("+", operation) == 0) {
         printf("%d\n", x + y);
@@ -58,4 +55,22 @@ int main(void)
     }else if (strcmp("x", operation) == 0) {
         printf("%d\n", x * y);
     }
+}
+
+
+int main(void)
+{
+    // Intro message
+    printf("Welcome to my first Calculator. You can use + , - , x , / , sq = square root , ex = exponent\n ");
+
+    // string operation = getValidOperation();
+
+    // Getting x and y values
+    int x = get_int("x: ");
+    int y = get_int("y: ");
+
+    // performOperation(operation, x, y);
+    performOperation(getValidOperation(), x, y);
+
+    // TODO: What order is things going to happne in???
   }

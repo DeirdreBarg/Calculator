@@ -8,7 +8,8 @@
         "stdexcept": "c",
         "typeinfo": "c",
         "variant": "c",
-        "__debug": "c"
+        "__debug": "c",
+        "string.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
