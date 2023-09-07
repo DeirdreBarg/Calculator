@@ -1,0 +1,14 @@
+{
+    "workbench.colorTheme": "Tomorrow Night Blue",
+    "workbench.preferredDarkColorTheme": "Kimbie Dark",
+    "files.associations": {
+        "exception": "c",
+        "new": "c",
+        "optional": "c",
+        "stdexcept": "c",
+        "typeinfo": "c",
+        "variant": "c",
+        "__debug": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}
