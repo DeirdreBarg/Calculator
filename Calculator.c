@@ -138,16 +138,6 @@ int main(void)
         int answer = performOperation(userOperation, x, y);
         printf("answer is %d", answer);
 
-        string z = "zach";
-        string d = "deirdre";
-
-        int a = 1;
-        int b = 3;
-
-
-        printf("%s is my name", zach)
-        printf("%s is my name and her name is %s", zach, deirdre)
-        
 
         doesWantToPlay = askToPlayAgain();
     }    
