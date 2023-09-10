@@ -1,4 +1,4 @@
-#include </Users/deirdrebarg/Documents/Developer/libcs50-11.0.2/src/cs50.h>
+#include "../libcs50-11.0.2/src/cs50.h"
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
