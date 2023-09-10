@@ -130,6 +130,7 @@ int main(void)
 
         // Determines if user operation is valid
         string userOperation = getValidOperation();
+        int number = get_int("val");
 
         // Get valid user input
         int x = getX();
