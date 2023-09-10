@@ -82,26 +82,44 @@
 
 // Get valid operation called userOperation from user
 string getValidOperation() {
-    // TODO: Get user input
-    // TODO: Validate user input
-    // TODO: Return valid operation
-    return "+";
+    bool needOperation = true;
+    while (needOperation) {
+        string userOperation = get_string("What Opperation?\n");
+        if (strcmp(userOperation, "+") == 0) {
+            needOperation = false;
+            return userOperation;
+        } else if (strcmp(userOperation, "-") == 0) {
+            needOperation = false;
+            return userOperation;
+        } else if (strcmp(userOperation, "x") == 0) {
+            needOperation = false;
+            return userOperation;
+        } else if (strcmp(userOperation, "/") == 0) {
+            needOperation = false;
+            return userOperation;
+        }  else if (strcmp(userOperation, "sq") == 0) {
+            needOperation = false;
+            return userOperation;
+        }  else if (strcmp(userOperation, "ex") == 0) {
+            needOperation = false;
+            return userOperation;
+        } else {
+            printf("Not supported operation,try again\n");
+            needOperation = true;
+        }
+    }
+    printf("Something went wrong, sorry");
+    return "";
 }
 
 // Get valid x from user
 int getX() {
-    // TODO: Get user input
-    // TODO: Validate user input
-    // TODO: Return valid x
-    return 1;
+    return get_int("x: ");
 }
 
 // Get valid y from user
-int getY() {    
-    // TODO: Get user input
-    // TODO: Validate user input
-    // TODO: Return valid y
-    return 2;
+int getY() {
+    return get_int("y: ");
 }
 
 // Perform operation
@@ -109,8 +127,20 @@ int getY() {
 // int y: Operand
 // string userOperation: Operator
 // int return: Result of the operation
-int performOperation(string userOperation, int x, int y) {
-    return 3;
+//TODO: Inmclude Square root and Exponents Operations 
+int performOperation(string userOperation, int x, int y) {    
+    if (strcmp(userOperation, "+") == 0) {
+        return x + y;
+    } else if (strcmp(userOperation, "-") == 0) {
+        return x - y;
+    } else if (strcmp(userOperation, "x") == 0) {
+        return x * y;
+    } else if (strcmp(userOperation, "/") == 0) {
+        return x / y;
+    } else {
+        printf("Does not support");
+        return 0;
+    }
 }
 
 // Asks user to play again
@@ -130,14 +160,22 @@ int main(void)
 
         // Determines if user operation is valid
         string userOperation = getValidOperation();
-        int number = get_int("val");
 
         // Get valid user input
         int x = getX();
-        int y = getY();
+        int y = 0;
+        // if userOperation is not square root then ask for y
+        bool isSquareRoot = strcmp(userOperation, "sq") == 0;
+        bool shouldAskForY = !isSquareRoot;
+        if (shouldAskForY)        
+        {
+            int y = getY();
+        }
+        
+        
 
         int answer = performOperation(userOperation, x, y);
-        printf("answer is %d", answer);
+        printf("answer is %d\n", answer);
 
 
         doesWantToPlay = askToPlayAgain();
